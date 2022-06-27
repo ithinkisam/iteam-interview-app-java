@@ -1,0 +1,47 @@
+plugins {
+    // Apply the application plugin to add support for building a CLI application in Java.
+    id 'application'
+}
+
+repositories {
+    // Use Maven Central for resolving dependencies.
+    mavenCentral()
+}
+
+dependencies {
+    
+    // lombok for automated boilerplate code generation
+    compileOnly 'org.projectlombok:lombok:1.+'
+    annotationProcessor 'org.projectlombok:lombok:1.+'
+
+	// IO
+	implementation 'com.opencsv:opencsv:5.6'
+
+    // JSON
+    runtimeOnly 'com.fasterxml.jackson.core:jackson-core:2.+'
+    implementation 'com.fasterxml.jackson.core:jackson-databind:2.+'
+    runtimeOnly 'com.fasterxml.jackson.datatype:jackson-datatype-jsr310:2.+'
+    runtimeOnly 'com.jayway.jsonpath:json-path:2.+'
+
+    // Logging JARs
+    implementation 'org.apache.logging.log4j:log4j-api:latest.release'
+    runtimeOnly 'org.apache.logging.log4j:log4j-core:latest.release'
+    runtimeOnly 'org.apache.logging.log4j:log4j-web:latest.release'
+    runtimeOnly 'org.apache.logging.log4j:log4j-slf4j-impl:latest.release'
+
+    // Use JUnit Jupiter for testing.
+    testImplementation 'org.junit.jupiter:junit-jupiter:5.8.1'
+
+    // This dependency is used by the application.
+    implementation 'com.google.guava:guava:30.1.1-jre'
+}
+
+application {
+    // Define the main class for the application.
+    mainClass = 'com.securian.invest.example.App'
+}
+
+tasks.named('test') {
+    // Use JUnit Platform for unit tests.
+    useJUnitPlatform()
+}
