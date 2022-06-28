@@ -54,7 +54,7 @@ gradlew.bat run --args="src/main/resources/input/trade-data.csv src/main/resourc
 
 ## Application Details
 
-#### Reading
+### Reading
 
 | File                                                                    | Description                                                               |
 | ----------------------------------------------------------------------- | ------------------------------------------------------------------------- |
@@ -63,7 +63,7 @@ gradlew.bat run --args="src/main/resources/input/trade-data.csv src/main/resourc
 | `src/main/java/com/securian/invest/example/io/ItemMapper.java`          | Interface for mapping a line of data from a csv file into a POJO          |
 | `src/main/java/com/securian/invest/example/io/TradeDataItemMapper.java` | Implementation of a `ItemMapper`; Maps csv data into a `TradeData` object |
 
-#### Aggregating
+### Aggregating
 
 | File                                                                                 | Description                                                                                                   |
 | ------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------- |
@@ -75,7 +75,7 @@ gradlew.bat run --args="src/main/resources/input/trade-data.csv src/main/resourc
 | `src/main/java/com/securian/invest/example/aggregate/SecurityAggregator.java`        | Tells `TradeDataAggregaator` to aggregate by Security Id                                                      |
 | `src/main/java/com/securian/invest/example/aggregate/TransactionTypeAggregator.java` | Tells `TradeDataAggregaator` to aggregate by Transaction Type                                                 |
 
-#### Writing
+### Writing
 
 | File                                                                        | Description                                                                 |
 | --------------------------------------------------------------------------- | --------------------------------------------------------------------------- |
@@ -84,14 +84,14 @@ gradlew.bat run --args="src/main/resources/input/trade-data.csv src/main/resourc
 | `src/main/java/com/securian/invest/example/io/LineMapper.java`              | Interface for mapping a POJO to a line of a csv file                        |
 | `src/main/java/com/securian/invest/example/io/SummaryRecordLineMapper.java` | Implementation of a `LineMapper`; Maps a `SummaryRecord` object to csv data |
 
-#### Executing
+### Executing
 
 | File                               | Description                                                  |
 | ---------------------------------- | ------------------------------------------------------------ |
 | `src/main/java/App.java`           | Contains the `main()` function that executes the application |
 | `src/main/java/Configuration.java` | POJO that parses and stores the input parameters             |
 
-#### Testing
+### Testing
 
 | File                                                                               | Description                              |
 | ---------------------------------------------------------------------------------- | ---------------------------------------- |
@@ -99,18 +99,24 @@ gradlew.bat run --args="src/main/resources/input/trade-data.csv src/main/resourc
 | `src/test/java/com/securian/invest/example/io/SummaryRecordLineMapperTest.java`    | Test class for `SummaryRecordLineMapper` |
 | `src/test/java/com/securian/invest/example/io/TradeDataItemMapperTest.java`        | Test class for `TradeDataItemMapper`     |
 
-## Challenge #1
+## Your tasks
+
+### Challenge #1
 
 Uh oh! The application keeps failing during the read step! Troubleshoot your way to figure out the root cause, and then put a solution in place.
 
-## Challenge #2
+### Challenge #2
 
 Whoops! The output file doesn't seem to have the correct net amounts. What went wrong? Find and fix the bug!
 
-## Challenge #3
+### Challenge #3
 
 Hmmm.. The input parameter 'BY_TRANSACTION_TYPE' doesn't seem to work just right. Can you resolve this issue, too?
 
-## Bonus Challenge!
+### Bonus Challenge!
 
-Write unit tests to one or more test classes to validate your changes from Challenges 2 and 3 are working as expected.
+Implement the unit tests in `TradeDataAggregatorTest.java` marked with the "TODO" comment and add a new test class for `AggregatorFactory` (put it in `src/test/java/com/securian/invest/example/aggregate/AggregatorFactoryTest.java`). Use the tests to validate your changes from challenges 2 and 3.
+
+## Before the interview
+
+Complete challenges 1-3 before the interview. The bonus is exactly that - a bonus! We are most interested in seeing the approach you take when working through the challenges, so take notes while you're working through them and prepare to walk us through your problem solving process. The actual solution is secondary to the process you go through while debugging the application.
