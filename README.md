@@ -1,12 +1,30 @@
 # Investment Systems Interview Java Application
 
-Thank you for your interest in the Enterpise Technology Investments Team at Securian Financial! As part of our process to get to know you, we built this coding exercise that resembles real problems we solve as a members of this team. Please read the sections below for an introduction to this application, details you need to know to get started, and finally, what we would like to see you do!
+Thank you for your interest in the Enterpise Technology Investments Team at Securian Financial! As part of our process to get to know you, we built this coding exercise that resembles real problems we solve as members of this team. Please read the sections below for an introduction to this application, details you need to know to get started, and finally, what we would like to see you do!
 
-#### System Requirements
+## System Requirements
 
-- [Java](https://www.oracle.com/java/technologies/downloads/#java8)
-- [Gradle](https://gradle.org/install/)
-- [Lombok](https://projectlombok.org/download)
+### IDE
+
+Use whichever IDE you are most comfortable with. We use Eclipse and Visual Studio Code. Both are free. Visual Studio Code is lighterweight and requires less setup, but can be pickier when it comes to setting up and running a Java project. Eclipse has been around longer and may be more familiar to you.
+
+### Java
+
+Most of our applications run on Java 8, so you'll need a [Java JDK](https://www.oracle.com/java/technologies/downloads/#java8) in order to work on this exercise. If you already have a more recent version of the JDK installed, that should work as well.
+
+### Gradle
+
+Gradle is one of the most popular build automation tools used by Java developers. This project leverages a Gradle wrapper within the project, so you shouldn't need to install it, but here is the install link if the need arises. This project is using Gradle v7.4.2.
+
+[Gradle installation instructions](https://gradle.org/install/)
+
+### Lombok
+
+Lombok is a code generation tool used to generate boilerplate code for Java applications (getters, setters, constructors, toString, etc.). We rely on this library to keep our code base clean and to eliminate human error. Follow the [installation instructions](https://projectlombok.org/download) for your IDE to get it set up locally.
+
+The latest version of the Lombok JAR is provided in this project at `/extra/lombok.jar`.
+
+Getting Lombok working in your IDE can be time consuming if it does not work right away. We've provided versions of the `SummaryRecord` and `TradeData` classes with the Lombok dependency removed. You can find them under `src/main/resources/delombok`. Copy the two files to the "domain" package, delete the existing files, and then remove the ".txt" extension.
 
 ## Overview
 
@@ -16,10 +34,23 @@ The purpose of this application is to:
 2. Aggregate the data based on an input parameter, and finally
 3. Write out to a file with the summarized data
 
-To run the application, provide the following 3 parameters:
-`[input] [output] [aggregation_type]`
+The application takes three arguments, in this order.
 
-Example: `"src/main/resources/input/trade-data.csv" "src/main/resources/output/summary.csv" BY_ISSUER`
+1. A path to the input file (e.g. `src/main/resources/input/trade-data.csv`)
+2. A path to the output summary file (e.g. `src/main/resources/output/summary.csv`)
+3. The type of aggregation to perform; must be one of `BY_ISSUER`, `BY_SECURITY`, `BY_TRANSACTION_TYPE`, or `BY_MONTH`.
+
+Use the Gradle `run` task to run the application.
+
+```sh
+# bash
+./gradlew run --args="src/main/resources/input/trade-data.csv src/main/resources/output/summary.csv BY_ISSUER"
+```
+
+```ps1
+# Windows (Powershell, cmd)
+gradlew.bat run --args="src/main/resources/input/trade-data.csv src/main/resources/output/summary.csv BY_ISSUER"
+```
 
 ## Application Details
 
