@@ -47,9 +47,14 @@ Use the Gradle `run` task to run the application.
 ./gradlew run --args="src/main/resources/input/trade-data.csv src/main/resources/output/summary.csv BY_ISSUER"
 ```
 
-```ps1
-# Windows (Powershell, cmd)
+```bat
+# Windows (Command Prompt)
 gradlew.bat run --args="src/main/resources/input/trade-data.csv src/main/resources/output/summary.csv BY_ISSUER"
+```
+
+```ps1
+# Windows (Powershell)
+cmd.exe /c 'gradlew.bat run --args="src/main/resources/input/trade-data.csv src/main/resources/output/summary.csv BY_ISSUER"'
 ```
 
 ## Application Details
