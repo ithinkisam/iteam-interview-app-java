@@ -24,7 +24,7 @@ Lombok is a code generation tool used to generate boilerplate code for Java appl
 
 The latest version of the Lombok JAR is provided in this project at `/extra/lombok.jar`.
 
-Getting Lombok working in your IDE can be time consuming if it does not work right away. We've provided versions of the `SummaryRecord` and `TradeData` classes with the Lombok dependency removed. You can find them under `src/main/resources/delombok`. Copy the two files to the "domain" package, delete the existing files, and then remove the ".txt" extension.
+Getting Lombok working in your IDE can be time consuming if it does not work right away. If you can't get it installed to work with your IDE, we've provided versions of the `SummaryRecord` and `TradeData` classes with the Lombok dependency removed. You can find them under `src/main/resources/delombok`. Copy the two files to the "domain" package, delete the existing files, and then remove the ".txt" extension.
 
 ## Overview
 
